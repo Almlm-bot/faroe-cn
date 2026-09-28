@@ -791,12 +791,19 @@ main,
 
 #pasture .topic-media {
   width: min(100%, 28rem);
+  min-height: 0;
+  height: auto;
+  overflow: visible;
   margin-inline: auto;
 }
 
 #pasture .topic-media img {
-  min-height: 0;
+  display: block;
+  width: 100%;
   height: auto;
+  min-height: 0;
+  aspect-ratio: 938 / 592;
+  object-fit: contain;
 }
 
 .topic:hover .topic-media img {
