@@ -2,7 +2,6 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>美食｜探访法罗｜吴梓谦 &amp; 李雨涵</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +15,7 @@
   <body>
     <header class="site-header solid" id="top">
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/brand-mark.png" alt="" />
+        <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-text">
           <strong>探访法罗</strong>
           <small>Visit Faroe Islands</small>
@@ -41,11 +40,6 @@
             <path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z" />
           </svg>
           <span class="fav-count" id="favCount" hidden>0</span>
-        </button>
-        <button type="button" class="icon-btn" id="themeToggle" aria-label="打开夜览" aria-pressed="false">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <path d="M21 14.5A8.5 8.5 0 1110.5 3 7 7 0 0021 14.5z" />
-          </svg>
         </button>
         <button type="button" class="icon-btn menu-btn" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -86,12 +80,12 @@
     <main>
       <header class="page-intro">
         <p class="eyebrow">Food &amp; Drink</p>
-        <h1><span class="line">尝一口法罗</span></h1>
-        <p class="lead">海里上来的，山坡上养的，还有挂在风里慢慢干的，最后都会出现在同一张桌上。</p>
+        <h1>尝一口法罗</h1>
+        <p class="lead">海洋、牧场与岛屿生活，共同塑造了法罗独特的味觉。</p>
       </header>
       <div class="page-bleed">
         <img
-          src="https://visitfaroeislands.com/download/faroe-islands-torshavn-roks-restaurant-food-04646_0_medium.jpg.webp"
+          src="https://images.unsplash.com/photo-1564216380254-072195a3d560?auto=format&fit=crop&w=2000&q=85"
           alt="法罗群岛牧场与村落"
         />
       </div>
@@ -99,12 +93,12 @@
       <section class="content-block" id="sea-taste">
         <article class="topic">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/cafe-in-a-moluni-kivi_medium.jpg.webp" alt="北大西洋海面" />
+            <img src="https://images.unsplash.com/photo-1561810051-09dd8d26010c?auto=format&fit=crop&w=1400&q=80" alt="北大西洋海面" />
           </div>
           <div class="topic-body">
             <p class="eyebrow">海洋的味道</p>
             <h2>新鲜海产与北大西洋的风味</h2>
-            <p>渔船回来以后，鱼会先出现在托尔斯港的餐厅和咖啡馆。你不必研究一整份菜单，点一份当天的渔获就够了。汤、面包和窗外的港口，通常比口号更接近这里的午饭。</p>
+            <p>渔业仍是法罗生活的根基。鳕鱼、鲑鱼与其他北大西洋海产出现在港口餐厅与家庭餐桌。托尔斯港是品尝当日渔获最方便的起点。</p>
           </div>
         </article>
       </section>
@@ -112,13 +106,13 @@
       <section class="content-block" id="pasture">
         <article class="topic reverse">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/2113_medium.jpg.webp" alt="法罗草坡上的羊群" />
+            <img src="https://images.unsplash.com/photo-1506457081075-a75337d186cc?auto=format&fit=crop&w=1400&q=80" alt="法罗草坡上的羊群" />
           </div>
           <div class="topic-body">
             <p class="eyebrow">来自牧场</p>
             <h2>羊肉、奶制品与当地食材</h2>
             <p>
-              风干羊肉 skerpikjøt 挂得很久，气味也因此认真。旁边常有发酵的鱼和鲸脂，这是法罗人保存食物的老办法，不是为了吓游客。第一次吃，要一小份，配上面包，慢慢来。
+              羊几乎是法罗风景的一部分。传统风干羊肉 skerpikjøt 气味浓烈，是岛屿饮食记忆的核心之一。牧场、根茎蔬菜与简短的生长季，决定了法罗厨房的克制与鲜明。
             </p>
           </div>
         </article>
@@ -127,7 +121,7 @@
       <section class="content-block" id="table">
         <article class="topic">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/cafe-in-a-moluni-kivi_medium.jpg.webp" alt="托尔斯港街道与房屋" />
+            <img src="https://images.unsplash.com/photo-1506462313968-6a1f37574ec6?auto=format&fit=crop&w=1400&q=80" alt="托尔斯港街道与房屋" />
           </div>
           <div class="topic-body">
             <p class="eyebrow">法罗餐桌</p>
@@ -141,7 +135,7 @@
       <section class="content-block" id="heim">
         <article class="topic reverse" data-fav-id="food-heim" data-fav-title="Heim｜走进当地人的餐桌" data-fav-type="美食">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/drekkamunn-heima_medium.jpg.webp" alt="法罗山坡上的人家" />
+            <img src="https://images.unsplash.com/photo-1583613774245-3d44b74a4477?auto=format&fit=crop&w=1400&q=80" alt="法罗山坡上的人家" />
           </div>
           <div class="topic-body">
             <p class="eyebrow">Heim</p>

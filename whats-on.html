@@ -2,7 +2,6 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>活动｜探访法罗｜吴梓谦 &amp; 李雨涵</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +15,7 @@
   <body>
     <header class="site-header solid" id="top">
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/brand-mark.png" alt="" />
+        <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-text">
           <strong>探访法罗</strong>
           <small>Visit Faroe Islands</small>
@@ -41,11 +40,6 @@
             <path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z" />
           </svg>
           <span class="fav-count" id="favCount" hidden>0</span>
-        </button>
-        <button type="button" class="icon-btn" id="themeToggle" aria-label="打开夜览" aria-pressed="false">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <path d="M21 14.5A8.5 8.5 0 1110.5 3 7 7 0 0021 14.5z" />
-          </svg>
         </button>
         <button type="button" class="icon-btn menu-btn" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -86,12 +80,12 @@
     <main>
       <header class="page-intro">
         <p class="eyebrow">What's on</p>
-        <h1><span class="line">岛上正在发生</span></h1>
-        <p class="lead">先选一种你想靠近的事：一场演出、一条山径、一顿饭，或一个值得慢慢走的地方。</p>
+        <h1>岛上正在发生</h1>
+        <p class="lead">音乐、艺术、徒步、美食与传统文化——看看法罗此刻正在发生什么。</p>
       </header>
       <div class="page-bleed">
         <img
-          src="https://visitfaroeislands.com/download/260605-tk-mentanarnatt-co-mentanarnatt-066_medium.jpg.webp"
+          src="https://images.unsplash.com/photo-1506462313968-6a1f37574ec6?auto=format&fit=crop&w=2000&q=85"
           alt="托尔斯港港湾与草顶房屋"
         />
       </div>
@@ -105,107 +99,61 @@
           <button type="button" class="chip" data-filter="place">地点</button>
         </div>
 
-        <article class="event-card" data-category="event" data-fav-id="wo-nordic" data-fav-title="北欧之家的秋天" data-fav-type="活动">
-          <a class="event-card-link" href="#detail-nordic">
-            <img src="https://visitfaroeislands.com/download/auramyndir-huldulitt-konsertleaelinborg-20250201-172512_0_medium.jpg.webp" alt="北欧之家的音乐会现场" />
+        <div class="event-list">
+          <article class="event-item" data-category="event" data-fav-id="wo-nordic" data-fav-title="北欧之家文化季" data-fav-type="活动">
+            <time datetime="2026-10-12">10.12 — 10.28</time>
             <div>
-              <p class="meta">文化活动 · 托尔斯港</p>
-              <h3>北欧之家的秋天</h3>
-              <p>音乐、展览和讲座排在同一座面向港口的房子里，不用跑遍全城。</p>
+              <h3>北欧之家文化季</h3>
+              <p>托尔斯港 Tórshavn｜音乐 · 展览 · 讲座</p>
             </div>
-          </a>
-          <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
-        </article>
-        <article class="event-detail" id="detail-nordic" data-category="event">
-          <h3>怎么安排这个傍晚</h3>
-          <p>下午先看展。北欧之家的展厅不大，足够你把一幅画看完，再走到窗边看港口。傍晚如果有音乐会，就留下来。散场不必赶车，沿着岸走回住处，风会把刚才的声音吹淡一点。</p>
-          <p>文化季通常排在十月中下旬。具体场次以北欧之家当季节目为准，出发前再看一眼日期。</p>
-        </article>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
 
-        <article class="event-card" data-category="hike" data-fav-id="wo-kallur" data-fav-title="走向 Kallur 灯塔" data-fav-type="徒步">
-          <a class="event-card-link" href="#detail-kallur">
-            <img src="https://visitfaroeislands.com/download/img-9697_0_medium.jpg.webp" alt="向导带领的海岸徒步" />
+          <article class="event-item" data-category="hike" data-fav-id="wo-kallur" data-fav-title="向导徒步：Kallur 灯塔" data-fav-type="徒步">
+            <time>每周末</time>
             <div>
-              <p class="meta">徒步 · 卡尔索伊岛</p>
-              <h3>走向 Kallur 灯塔</h3>
-              <p>灯塔立在草坡尽头。路本身不难认，难的是风，以及云什么时候压下来。</p>
+              <h3>向导徒步：Kallur 灯塔</h3>
+              <p>卡尔索伊岛 Kalsoy｜中等难度</p>
             </div>
-          </a>
-          <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
-        </article>
-        <article class="event-detail" id="detail-kallur" data-category="hike">
-          <h3>走之前先看天</h3>
-          <p>从特尔沃伊登上卡尔索伊岛，再沿山径走向 Kallur。请穿抓地的鞋，把防水外套放在最外层。雾一起来，悬崖边缘会比你以为的更近。</p>
-          <p>这条线常常需要向导，有的路段还涉及徒步准入。不要自己翻过围栏抄近路。更完整的准备写在<a href="plan.html#hike-safe">安全徒步指南</a>里。</p>
-        </article>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
 
-        <article class="event-card" data-category="food" data-fav-id="wo-food" data-fav-title="坐下来，吃一顿法罗" data-fav-type="活动">
-          <a class="event-card-link" href="#detail-food">
-            <img src="https://visitfaroeislands.com/download/faroe-islands-torshavn-roks-restaurant-food-04646_0_medium.jpg.webp" alt="托尔斯港餐厅的海鲜与发酵风味" />
+          <article class="event-item" data-category="food" data-fav-id="wo-food" data-fav-title="法罗风味餐桌" data-fav-type="活动">
+            <time datetime="2026-11-05">11月5日</time>
             <div>
-              <p class="meta">美食体验 · 托尔斯港与村落</p>
-              <h3>坐下来，吃一顿法罗</h3>
-              <p>同一张桌子上，可能一边是刚上岸的鱼，一边是挂了很久的羊肉。</p>
+              <h3>法罗风味餐桌</h3>
+              <p>当地农家｜Heim体验</p>
             </div>
-          </a>
-          <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
-        </article>
-        <article class="event-detail" id="detail-food" data-category="food">
-          <h3>两种坐下来的方式</h3>
-          <p>在托尔斯港，餐厅会把渔获和发酵食物做成一顿完整的晚饭。如果你更想听故事，就预约 Heim：走进一户人家，吃他们自己也会吃的东西，问这道菜为什么要风干。</p>
-          <p>法罗菜的气味比看起来更认真。第一次尝风干羊肉，可以先要一小份。想继续了解食材，去<a href="food.html">美食</a>页。</p>
-        </article>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
 
-        <article class="event-card" data-category="place" data-fav-id="wo-tinganes" data-fav-title="Tinganes 的红房子" data-fav-type="地点">
-          <a class="event-card-link" href="#detail-tinganes">
-            <img src="https://visitfaroeislands.com/download/torshavn-visit-faroe-islands-june-2022-26_medium.jpg.webp" alt="托尔斯港 Tinganes 的红木屋和草顶" />
+          <article class="event-item" data-category="place" data-fav-id="wo-tinganes" data-fav-title="Tinganes 半岛漫步" data-fav-type="地点">
+            <time>全天</time>
             <div>
-              <p class="meta">地点 · 托尔斯港</p>
-              <h3>Tinganes 的红房子</h3>
-              <p>政府办公室和住家挨在一起。这里适合走路，不适合赶时间。</p>
+              <h3>Tinganes 红木屋半岛</h3>
+              <p>托尔斯港 Tórshavn｜历史街区 · 漫步</p>
             </div>
-          </a>
-          <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
-        </article>
-        <article class="event-detail" id="detail-tinganes" data-category="place">
-          <h3>沿着半岛走到尽头</h3>
-          <p>Tinganes 伸进港口，红墙和草顶一路排下去。很多房子今天仍在使用。请放轻脚步，不要把人家的门口当成拍照背景站太久。</p>
-          <p>如果下雨，北欧之家和港口的咖啡馆都在步行距离里。这是三天行程里最容易安排的一个上午。</p>
-        </article>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
 
-        <article class="event-card" data-category="place" data-fav-id="wo-village" data-fav-title="草顶还在的村子" data-fav-type="地点">
-          <a class="event-card-link" href="#detail-village">
-            <img src="https://visitfaroeislands.com/download/skopun-cfm-25-klara-johannesen-76_medium.jpg.webp" alt="斯科蓬村的草顶木屋和教堂" />
+          <article class="event-item" data-category="place" data-fav-id="wo-sakshun" data-fav-title="Saksun 潮汐泻湖" data-fav-type="地点">
+            <time>需看潮汐</time>
             <div>
-              <p class="meta">地点 · 村落</p>
-              <h3>草顶还在的村子</h3>
-              <p>教堂、木屋和一片被风压低的草，就是很多法罗村庄的全部。</p>
+              <h3>Saksun 与潮汐泻湖</h3>
+              <p>斯特勒莫伊岛 Streymoy｜村落 · 自然</p>
             </div>
-          </a>
-          <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
-        </article>
-        <article class="event-detail" id="detail-village" data-category="place">
-          <h3>去村子里，请把车停好再走</h3>
-          <p>斯科蓬、Saksun 这样的地方很小。潮汐会改变泻湖的样子，天气会改变你能不能走到瀑布跟前。先看潮汐和云，再决定停留多久。</p>
-          <p>村子不是景区通道。羊有自己的路，人也有自己的门口。拍照之前，先让出路。</p>
-        </article>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
 
-        <article class="event-card" data-category="hike" data-fav-id="wo-cliff" data-fav-title="只在天气好时走上悬崖" data-fav-type="徒步">
-          <a class="event-card-link" href="#detail-cliff">
-            <img src="https://visitfaroeislands.com/download/0110-andrija-ilic-faroe-islands_medium.jpg.webp" alt="法罗海岸悬崖上的徒步小径" />
+          <article class="event-item" data-category="hike" data-fav-id="wo-slættaratindur" data-fav-title="Slættaratindur 最高峰" data-fav-type="徒步">
+            <time>晴好天气</time>
             <div>
-              <p class="meta">徒步 · 看天气再出发</p>
-              <h3>只在天气好时走上悬崖</h3>
-              <p>最高峰和海边的崖径都很美。美的前提是你还站得稳。</p>
+              <h3>Slættaratindur 最高峰</h3>
+              <p>埃斯图罗伊岛 Eysturoy｜远足</p>
             </div>
-          </a>
-          <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
-        </article>
-        <article class="event-detail" id="detail-cliff" data-category="hike">
-          <h3>把返程时间算进去</h3>
-          <p>Slættaratindur 是群岛最高的地方。晴的时候，海在很远的位置发亮；风大或有雾，就换一条低一点的路，或者干脆不去。</p>
-          <p>告诉住处的人你的路线和预计回来的时间。手机信号不可靠，外套和干的一层衣服比照片更重要。</p>
-        </article>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
+        </div>
       </section>
     </main>
 

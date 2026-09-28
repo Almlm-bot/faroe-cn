@@ -2,7 +2,6 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>旅行指南｜探访法罗｜吴梓谦 &amp; 李雨涵</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +15,7 @@
   <body>
     <header class="site-header solid" id="top">
       <a class="brand" href="index.html">
-        <img class="brand-mark" src="assets/brand-mark.png" alt="" />
+        <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-text">
           <strong>探访法罗</strong>
           <small>Visit Faroe Islands</small>
@@ -41,11 +40,6 @@
             <path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z" />
           </svg>
           <span class="fav-count" id="favCount" hidden>0</span>
-        </button>
-        <button type="button" class="icon-btn" id="themeToggle" aria-label="打开夜览" aria-pressed="false">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-            <path d="M21 14.5A8.5 8.5 0 1110.5 3 7 7 0 0021 14.5z" />
-          </svg>
         </button>
         <button type="button" class="icon-btn menu-btn" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -86,12 +80,12 @@
     <main>
       <header class="page-intro">
         <p class="eyebrow">Plan your stay</p>
-        <h1><span class="line">开始你的</span><span class="line">法罗之旅</span></h1>
+        <h1>开始你的法罗之旅</h1>
         <p class="lead">从如何抵达，到住在哪里、如何游览岛屿，提前做好旅行准备。</p>
       </header>
       <div class="page-bleed">
         <img
-          src="https://visitfaroeislands.com/download/curvy-roads-of-the-faroe-islands_medium.jpg.webp"
+          src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=85"
           alt="法罗群岛山脊道路与大西洋"
         />
       </div>
@@ -103,11 +97,11 @@
         </div>
         <div class="arrive-grid">
           <a class="arrive-panel" href="#air-detail">
-            <img src="https://visitfaroeislands.com/download/0110-andrija-ilic-faroe-islands_medium.jpg.webp" alt="法罗群岛空中视角" />
+            <img src="https://images.unsplash.com/photo-1517751243320-0cc45ec82da7?auto=format&fit=crop&w=1200&q=80" alt="法罗群岛空中视角" />
             <div class="arrive-label"><strong>乘飞机抵达</strong></div>
           </a>
           <a class="arrive-panel" href="#sea">
-            <img src="https://visitfaroeislands.com/download/norrona-sailing-past-an-island_medium.jpg.webp" alt="从海上接近法罗群岛" />
+            <img src="https://images.unsplash.com/photo-1561810051-09dd8d26010c?auto=format&fit=crop&w=1200&q=80" alt="从海上接近法罗群岛" />
             <div class="arrive-label"><strong>乘渡轮抵达</strong></div>
           </a>
         </div>
@@ -116,7 +110,7 @@
       <section class="content-block" id="air-detail">
         <article class="topic">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/curvy-roads-of-the-faroe-islands_medium.jpg.webp" alt="瓦加尔岛悬崖" />
+            <img src="https://images.unsplash.com/photo-1652038930872-5ee33c17ca10?auto=format&fit=crop&w=1400&q=80" alt="瓦加尔岛悬崖" />
           </div>
           <div class="topic-body">
             <p class="meta">By air</p>
@@ -132,7 +126,7 @@
       <section class="content-block" id="sea">
         <article class="topic reverse">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/norrona-sailing-past-an-island_medium.jpg.webp" alt="法罗峡湾" />
+            <img src="https://images.unsplash.com/photo-1539634936668-036d13a9cc3b?auto=format&fit=crop&w=1400&q=80" alt="法罗峡湾" />
           </div>
           <div class="topic-body">
             <p class="meta">By sea</p>
@@ -185,7 +179,7 @@
         </div>
         <article class="topic">
           <div class="topic-media">
-            <img src="https://visitfaroeislands.com/download/curvy-roads-of-the-faroe-islands_medium.jpg.webp" alt="法罗山间道路" />
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1400&q=80" alt="法罗山间道路" />
           </div>
           <div class="topic-body">
             <h3>自驾、巴士与渡轮</h3>
@@ -203,27 +197,14 @@
           <p class="section-lead">法罗的自然脆弱而壮美。遵循小径、尊重私人土地，让岛屿对下一位旅人依然敞开。</p>
         </div>
         <div class="guide-list" id="hiking-notes">
-          <a href="#hike-safe"><span>01</span>安全徒步指南<i>→</i></a>
-          <a href="#hike-access"><span>02</span>徒步须知与准入<i>→</i></a>
-          <a href="#hike-health"><span>03</span>健康与安全<i>→</i></a>
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener"><span>01</span>安全徒步指南<i>→</i></a>
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener"><span>02</span>徒步须知与准入<i>→</i></a>
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener"><span>03</span>健康与安全<i>→</i></a>
           <a href="#pack"><span>04</span>天气与出行<i>→</i></a>
         </div>
-
-        <article class="guide-panel" id="hike-safe">
-          <h3>安全徒步指南</h3>
-          <p>出发前把路线和返回时间告诉住处的人。法罗的云移动得很快，出发时的阳光不能代表两小时后的悬崖。</p>
-          <p>走标记过的山径，离开崖边至少留出一步以上的余地。湿草比岩石更滑。感到风把你推向海边时，就转身往回走。</p>
-        </article>
-        <article class="guide-panel" id="hike-access">
-          <h3>徒步须知与准入</h3>
-          <p>许多山径穿过私人土地。有的路线需要向导，有的需要支付徒步费用。费用不是门票，而是你走在别人的草场上。</p>
-          <p>不要翻越围栏，不要抄进羊圈和人家的院子。羊会自己让路，你不必追着它们拍照。</p>
-        </article>
-        <article class="guide-panel" id="hike-health">
-          <h3>健康与安全</h3>
-          <p>穿可以防风防雨的外套，里面留一件干的层。手机在山谷和崖边经常没有信号。带上水和一点能马上吃的东西。</p>
-          <p>如果有人失温、迷路或靠近危险的崖边，先停止前进，再寻求帮助。不要为了看全景走到没有退路的地方。</p>
-        </article>
+        <p class="section-lead" style="margin-top: 1.5rem">
+          部分山径位于私人土地，可能需要向导或支付徒步准入费用。请以 Visit Faroe Islands 与当地向导的最新说明为准，不要擅自翻越围栏或靠近悬崖边缘。
+        </p>
       </section>
 
       <section class="content-block" id="pack">
@@ -247,51 +228,27 @@
         </div>
       </section>
 
-      <section class="content-block" id="guide-72">
+      <section class="content-block" id="72h">
         <div class="section-head">
           <p class="eyebrow">72-hour guide</p>
-          <h2><span class="line">七十二小时</span><span class="line">旅行指南</span></h2>
-          <p class="section-lead">三天不够把十八座岛走完。够你认识海、一座城，以及一个村子。</p>
+          <h2>72小时旅行指南</h2>
+          <p class="section-lead">时间有限时，用这三天抓住岛屿的基本气质，再按兴趣延展。</p>
         </div>
-        <div class="day-grid">
-          <article class="day-card">
-            <img src="https://visitfaroeislands.com/download/torshavn-visit-faroe-islands-june-2022-26_medium.jpg.webp" alt="托尔斯港 Tinganes 的红木屋" />
-            <div>
-              <p class="meta">第一天 · 托尔斯港</p>
-              <h3>先在城里把脚步放慢</h3>
-              <ol>
-                <li>上午沿 Tinganes 走到半岛尽头，看红房子怎样贴着海。</li>
-                <li>中午在港口附近吃饭，点一份鱼，也试一小份风干羊肉。</li>
-                <li>下午去北欧之家，或只是坐在窗边看船。</li>
-                <li>晚上早些休息。明天如果要爬山，今晚不要把行程排满。</li>
-              </ol>
-            </div>
+        <div class="event-row">
+          <article class="event-block">
+            <time>Day 1</time>
+            <h3>托尔斯港慢行</h3>
+            <p>港口、Tinganes、北欧之家，以及第一顿海鲜晚餐。</p>
           </article>
-          <article class="day-card">
-            <img src="https://visitfaroeislands.com/download/img-9697_0_medium.jpg.webp" alt="向导带领的海岸徒步" />
-            <div>
-              <p class="meta">第二天 · 一条山径</p>
-              <h3>只选一条路，并看天再走</h3>
-              <ol>
-                <li>早上先看云和风。不合适就改去村子，不要硬上悬崖。</li>
-                <li>合适的话，跟向导走 Kallur，或一条更缓和的海岸线。</li>
-                <li>中午用简单的食物，不要在最暴露的地方停留太久。</li>
-                <li>下午回到住处，把湿衣服换掉。给自己留一段什么都不做的时间。</li>
-              </ol>
-            </div>
+          <article class="event-block">
+            <time>Day 2</time>
+            <h3>一条经典徒步</h3>
+            <p>选择适合体能的向导路线，体验悬崖与大西洋的尺度。</p>
           </article>
-          <article class="day-card">
-            <img src="https://visitfaroeislands.com/download/nature-fullsizerender_medium.jpg.webp" alt="瀑布、村庄和海边悬崖" />
-            <div>
-              <p class="meta">第三天 · 一个村子</p>
-              <h3>把返程的时间算进风景里</h3>
-              <ol>
-                <li>选择一处就好：Gásadalur 的瀑布，或一个还有草顶的村子。</li>
-                <li>车停在该停的地方，再走路进去。</li>
-                <li>至少留出两小时给雾、船班和回机场的山路。</li>
-                <li>如果飞机还早，回托尔斯港再喝一杯热的，比多赶一个景点从容。</li>
-              </ol>
-            </div>
+          <article class="event-block">
+            <time>Day 3</time>
+            <h3>村落与西岛风光</h3>
+            <p>探访瓦加尔岛等地的村庄与瀑布，为返程留出天气缓冲。</p>
           </article>
         </div>
       </section>

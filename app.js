@@ -15,7 +15,7 @@ const SEARCH_INDEX = [
   { title: "岛上交通", type: "旅行指南", href: "plan.html#around", keywords: "租车 公交 自行车 隧道" },
   { title: "安全旅行", type: "旅行指南", href: "plan.html#safe", keywords: "安全 徒步费 责任 天气" },
   { title: "行前准备", type: "旅行指南", href: "plan.html#pack", keywords: "行李 打包 装备" },
-  { title: "72小时旅行指南", type: "旅行指南", href: "plan.html#guide-72", keywords: "行程 三天 指南 72" },
+  { title: "72小时旅行指南", type: "旅行指南", href: "plan.html#72h", keywords: "行程 三天 指南 72" },
   { title: "活动日历", type: "活动", href: "whats-on.html", keywords: "活动 节日 音乐会 徒步" },
   { title: "关于法罗", type: "关于", href: "about.html", keywords: "天气 气候 地理 语言 历史" },
 ];
@@ -262,56 +262,21 @@ function initReveal() {
   nodes.forEach((n) => io.observe(n));
 }
 
-function applyFilter(filter) {
-  const chips = document.querySelectorAll("[data-filter]");
-  const items = document.querySelectorAll("[data-category]");
-  chips.forEach((chip) => {
-    chip.classList.toggle("active", chip.getAttribute("data-filter") === filter);
-  });
-  items.forEach((item) => {
-    const show = !filter || filter === "all" || item.getAttribute("data-category") === filter;
-    item.classList.toggle("is-hidden", !show);
-  });
-}
-
 function initFilters() {
   const chips = document.querySelectorAll("[data-filter]");
-  if (!chips.length) return;
+  const items = document.querySelectorAll("[data-category]");
+  if (!chips.length || !items.length) return;
 
   chips.forEach((chip) => {
-    chip.addEventListener("click", (event) => {
-      event.preventDefault();
-      const filter = chip.getAttribute("data-filter") || "all";
-      applyFilter(filter);
-      if (history.replaceState) {
-        history.replaceState(null, "", filter === "all" ? location.pathname : `#${filter}`);
-      }
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      const filter = chip.getAttribute("data-filter");
+      items.forEach((item) => {
+        const show = filter === "all" || item.getAttribute("data-category") === filter;
+        item.hidden = !show;
+      });
     });
-  });
-
-  const fromHash = (location.hash || "").replace("#", "");
-  const known = [...chips].some((chip) => chip.getAttribute("data-filter") === fromHash);
-  applyFilter(known ? fromHash : "all");
-}
-
-function initTheme() {
-  const root = document.documentElement;
-  const saved = localStorage.getItem("faroe-theme");
-  if (saved === "night") root.dataset.theme = "night";
-  const button = document.getElementById("themeToggle");
-  if (!button) return;
-  const syncLabel = () => {
-    const night = root.dataset.theme === "night";
-    button.setAttribute("aria-label", night ? "关闭夜览" : "打开夜览");
-    button.setAttribute("aria-pressed", night ? "true" : "false");
-  };
-  syncLabel();
-  button.addEventListener("click", () => {
-    const night = root.dataset.theme === "night";
-    if (night) delete root.dataset.theme;
-    else root.dataset.theme = "night";
-    localStorage.setItem("faroe-theme", night ? "" : "night");
-    syncLabel();
   });
 }
 
@@ -333,7 +298,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initFavButtons();
   initReveal();
   initFilters();
-  initTheme();
   initActiveNav();
   syncFavUI();
 });
