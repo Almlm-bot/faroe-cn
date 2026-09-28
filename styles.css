@@ -1046,10 +1046,6 @@ main,
   padding: clamp(3.2rem, 7vw, 5rem) var(--page) 1.6rem;
 }
 
-.site-footer.has-tilt {
-  padding-top: 0;
-}
-
 @property --active {
   syntax: "<number>";
   inherits: true;
@@ -1059,8 +1055,8 @@ main,
 .tilt-row {
   --tilt-card: clamp(7.2rem, 22vw, 11.75rem);
   --active: 3;
-  margin-left: calc(var(--page) * -1);
-  margin-right: calc(var(--page) * -1);
+  background: var(--sea);
+  color: rgba(251, 250, 247, 0.88);
   padding: 3rem 0 2.1rem;
   overflow: hidden;
 }
@@ -1186,11 +1182,6 @@ main,
 .tilt-dot.is-active {
   width: 1.55rem;
   background: rgba(251, 250, 247, 0.95);
-}
-
-.site-footer.has-tilt .footer-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 2.2rem;
 }
 
 .footer-top {
