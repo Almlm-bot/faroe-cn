@@ -806,6 +806,26 @@ main,
   object-fit: contain;
 }
 
+#heim .eyebrow {
+  text-transform: none;
+  letter-spacing: 0.12em;
+}
+
+#heim .topic-media {
+  min-height: 0;
+  height: auto;
+  overflow: visible;
+}
+
+#heim .topic-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1024 / 682;
+  object-fit: contain;
+}
+
 .topic:hover .topic-media img {
   transform: scale(1.04);
 }

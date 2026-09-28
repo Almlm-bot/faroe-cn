@@ -7,7 +7,7 @@ const SEARCH_INDEX = [
   { title: "法罗建筑", type: "人文", href: "culture.html#architecture", keywords: "建筑 草顶 托尔斯港 Tinganes" },
   { title: "传统与节庆", type: "人文", href: "culture.html#traditions", keywords: "节庆 链舞 奥拉夫斯节 Ólavsøka" },
   { title: "音乐与舞蹈", type: "人文", href: "culture.html#music", keywords: "音乐 舞蹈 北欧之家" },
-  { title: "Heim 体验", type: "美食", href: "food.html#heim", keywords: "Heim 餐桌 当地 家庭" },
+  { title: "Heimablídni 体验", type: "美食", href: "food.html#heim", keywords: "Heimablídni 餐桌 当地 家庭" },
   { title: "海鲜与羊肉", type: "美食", href: "food.html", keywords: "美食 餐厅 海鲜 羊肉" },
   { title: "乘飞机抵达", type: "旅行指南", href: "plan.html#air", keywords: "飞机 机场 航班 Vágar FAE" },
   { title: "乘渡轮抵达", type: "旅行指南", href: "plan.html#sea", keywords: "渡轮 海运 ferry" },
