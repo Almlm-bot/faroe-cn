@@ -1,0 +1,32 @@
+---
+description: 每次改完网站后提交推送到 GitHub，并给出已上线链接
+alwaysApply: true
+---
+
+# 每次修改后必须上线
+
+完成任何会改变网站内容、样式、功能或页面的修改后，不要只留在本机。必须同步 GitHub 并给出可打开的线上链接。
+
+## 必做步骤
+
+1. 只提交这次改动相关的文件，不要把无关文件或密钥加进去。
+2. 在 `main` 分支提交，然后推送到 `origin`：
+   - 远程仓库：https://github.com/Almlm-bot/faroe-cn
+   - 推送命令：`git push origin main`
+3. 不要 force push，不要改 `git config`，不要跳过 hooks。
+4. 推送成功后，在回复里给出对应线上链接。GitHub Pages 会随 `main` 自动更新。
+
+## 必须给出的链接
+
+- 首页：https://almlm-bot.github.io/faroe-cn/
+- 如果改了具体页面，同时给出该页链接，例如：
+  - https://almlm-bot.github.io/faroe-cn/plan.html
+  - https://almlm-bot.github.io/faroe-cn/whats-on.html
+  - https://almlm-bot.github.io/faroe-cn/nature.html
+- 源码仓库：https://github.com/Almlm-bot/faroe-cn
+
+## 注意
+
+- 本机若 `git` 不在 PATH，使用 `C:\Program Files\Git\cmd\git.exe`
+- 推送失败时先说明原因，再修好后重新推送，不要假装已经上线
+- 用户明确说不要提交或不要上线时，才跳过这一步
