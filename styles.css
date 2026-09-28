@@ -789,6 +789,17 @@ main,
   transition: transform 1.1s var(--ease);
 }
 
+#pasture .topic-media {
+  width: min(100%, 28rem);
+  margin-inline: auto;
+}
+
+#pasture .topic-media img {
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 1;
+}
+
 .topic:hover .topic-media img {
   transform: scale(1.04);
 }
@@ -1319,6 +1330,14 @@ main,
 
   .topic.reverse > * {
     direction: ltr;
+  }
+
+  #pasture .topic {
+    grid-template-columns: 28rem 1fr;
+  }
+
+  #pasture .topic-media {
+    margin: 0;
   }
 
   .footer-top {
