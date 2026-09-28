@@ -784,14 +784,6 @@ main,
   overflow: hidden;
 }
 
-.tilted-frame {
-  display: block;
-  width: 100%;
-  height: 34rem;
-  border: 0;
-  background: #ececec;
-}
-
 .topic-media img {
   width: 100%;
   height: 100%;
@@ -1052,6 +1044,153 @@ main,
   background: var(--sea);
   color: rgba(251, 250, 247, 0.88);
   padding: clamp(3.2rem, 7vw, 5rem) var(--page) 1.6rem;
+}
+
+.site-footer.has-tilt {
+  padding-top: 0;
+}
+
+@property --active {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 3;
+}
+
+.tilt-row {
+  --tilt-card: clamp(7.2rem, 22vw, 11.75rem);
+  --active: 3;
+  margin-left: calc(var(--page) * -1);
+  margin-right: calc(var(--page) * -1);
+  padding: 3rem 0 2.1rem;
+  overflow: hidden;
+}
+
+.tilt-viewport {
+  width: var(--tilt-card);
+  margin: 0 auto;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.tilt-track {
+  display: flex;
+  width: max-content;
+  transform: translateX(calc(var(--active) * var(--tilt-card) * -1));
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tilt-slide {
+  width: var(--tilt-card);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  color: inherit;
+  background: none;
+}
+
+.tilt-face {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transform: rotateY(calc((var(--active) - var(--i)) * 38deg)) scale(0.86);
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+}
+
+.tilt-slide.is-active .tilt-face {
+  transform: rotateY(0deg) scale(1);
+}
+
+.tilt-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tilt-caption {
+  min-height: 1.4em;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  color: rgba(251, 250, 247, 0.92);
+  white-space: nowrap;
+  opacity: 0;
+  filter: blur(2px);
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.tilt-slide.is-active .tilt-caption {
+  opacity: 1;
+  filter: none;
+}
+
+.tilt-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  width: fit-content;
+  margin: 1.35rem auto 0;
+  padding: 0.28rem 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tilt-arrow {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  color: rgba(251, 250, 247, 0.92);
+  padding: 0;
+}
+
+.tilt-arrow svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tilt-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.tilt-dots {
+  width: 11.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+}
+
+.tilt-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(251, 250, 247, 0.32);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.tilt-dot.is-active {
+  width: 1.55rem;
+  background: rgba(251, 250, 247, 0.95);
+}
+
+.site-footer.has-tilt .footer-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 2.2rem;
 }
 
 .footer-top {

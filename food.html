@@ -135,7 +135,7 @@
       <section class="content-block" id="heim">
         <article class="topic reverse" data-fav-id="food-heim" data-fav-title="Heim｜走进当地人的餐桌" data-fav-type="美食">
           <div class="topic-media">
-            <iframe class="tilted-frame" src="tilted-carousel.html" title="倾斜图片轮播"></iframe>
+            <img src="https://images.unsplash.com/photo-1583613774245-3d44b74a4477?auto=format&fit=crop&w=1400&q=80" alt="法罗山坡上的人家" />
           </div>
           <div class="topic-body">
             <p class="eyebrow">Heim</p>
@@ -150,8 +150,21 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <iframe class="tilted-frame" src="tilted-carousel.html" title="倾斜图片轮播"></iframe>
+    <footer class="site-footer has-tilt">
+      <section class="tilt-row" data-tilt-carousel aria-label="倾斜图片轮播">
+        <div class="tilt-viewport">
+          <div class="tilt-track"></div>
+        </div>
+        <div class="tilt-controls">
+          <button type="button" class="tilt-arrow" data-tilt-prev aria-label="上一张">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+          </button>
+          <div class="tilt-dots"></div>
+          <button type="button" class="tilt-arrow" data-tilt-next aria-label="下一张">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+          </button>
+        </div>
+      </section>
       <div class="footer-top">
         <div class="footer-brand">
           <strong>探访法罗</strong>
