@@ -2,6 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>探访法罗｜Visit Faroe Islands 法罗群岛旅游指南｜吴梓谦 &amp; 李雨涵</title>
     <meta
@@ -19,7 +20,7 @@
   <body>
     <header class="site-header" id="top">
       <a class="brand" href="index.html" aria-label="探访法罗首页">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-mark" src="assets/brand-mark.png" alt="" />
         <span class="brand-text">
           <strong>探访法罗</strong>
           <small>Visit Faroe Islands</small>
@@ -45,6 +46,11 @@
             <path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z" />
           </svg>
           <span class="fav-count" id="favCount" hidden>0</span>
+        </button>
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="打开夜览" aria-pressed="false">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 1110.5 3 7 7 0 0021 14.5z" />
+          </svg>
         </button>
         <button type="button" class="icon-btn menu-btn" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -89,7 +95,7 @@
       <section class="hero">
         <div class="hero-media">
           <img
-            src="https://images.unsplash.com/photo-1517751243320-0cc45ec82da7?auto=format&fit=crop&w=2000&q=85"
+            src="https://visitfaroeislands.com/download/4k4a5175_medium.jpg.webp"
             alt="法罗群岛绿色山峦与北大西洋"
             class="hero-img"
           />
@@ -97,9 +103,10 @@
         </div>
         <div class="hero-copy">
           <p class="kicker">Visit Faroe Islands</p>
-          <h1>在风与海之间，遇见法罗</h1>
+          <h1><span class="line">在风与海之间</span><span class="line">遇见法罗</span></h1>
           <p class="hero-lead">
-            十八座岛屿，连接着峡湾、悬崖与无尽绿野。踏入北大西洋深处，开启一场属于你的法罗之旅。
+            <span class="line">十八座岛散落在北大西洋里。</span>
+            <span class="line">把脚步放慢，风和海会自己过来。</span>
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="nature.html">探索法罗</a>
@@ -112,14 +119,14 @@
       <section class="section" id="inspiration">
         <div class="section-head">
           <p class="eyebrow">Inspiration</p>
-          <h2>从一场风景开始认识法罗</h2>
-          <p class="section-lead">从壮阔自然到岛屿生活，发现属于法罗的旅行灵感。</p>
+          <h2><span class="line">从一场风景开始</span><span class="line">认识法罗</span></h2>
+          <p class="section-lead">先看海，再看人怎么在海边过日子。</p>
         </div>
         <div class="inspire-grid">
           <article class="inspire-feature" data-fav-id="resp" data-fav-title="出发前，先了解法罗" data-fav-type="灵感">
             <a href="plan.html#safe" class="inspire-link">
               <img
-                src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1400&q=80"
+                src="https://visitfaroeislands.com/download/img-9697_0_medium.jpg.webp"
                 alt="卡尔索伊岛山脊与大西洋"
               />
               <div class="inspire-caption">
@@ -132,7 +139,7 @@
           <article class="inspire-item" data-fav-id="wellness" data-fav-title="荒野中的宁静" data-fav-type="灵感">
             <a href="nature.html">
               <img
-                src="https://images.unsplash.com/photo-1539634936668-036d13a9cc3b?auto=format&fit=crop&w=900&q=80"
+                src="https://visitfaroeislands.com/download/nature-fullsizerender_medium.jpg.webp"
                 alt="法罗群岛峡湾与云雾"
               />
               <div class="inspire-caption">
@@ -145,7 +152,7 @@
           <article class="inspire-item" data-fav-id="dimun" data-fav-title="Stóra Dímun 岛屿农庄" data-fav-type="灵感">
             <a href="culture.html#heim-life">
               <img
-                src="https://images.unsplash.com/photo-1583613774245-3d44b74a4477?auto=format&fit=crop&w=900&q=80"
+                src="https://visitfaroeislands.com/download/skopun-cfm-25-klara-johannesen-76_medium.jpg.webp"
                 alt="法罗群岛山坡上的房屋"
               />
               <div class="inspire-caption">
@@ -158,7 +165,7 @@
           <article class="inspire-item" data-fav-id="coolcation" data-fav-title="Coolcation｜清凉避暑" data-fav-type="灵感">
             <a href="about.html#climate">
               <img
-                src="https://images.unsplash.com/photo-1652038930872-5ee33c17ca10?auto=format&fit=crop&w=900&q=80"
+                src="https://visitfaroeislands.com/download/0110-andrija-ilic-faroe-islands_medium.jpg.webp"
                 alt="瓦加尔岛悬崖与海洋"
               />
               <div class="inspire-caption">
@@ -175,14 +182,14 @@
         <div class="section-head split">
           <div>
             <p class="eyebrow">Nature</p>
-            <h2>自然，是法罗最动人的语言</h2>
-            <p class="section-lead">绿色山谷、陡峭山峰与辽阔海洋，共同构成法罗独特的风景。</p>
+            <h2><span class="line">自然，是法罗</span><span class="line">最动人的语言</span></h2>
+            <p class="section-lead">山谷、悬崖和海，往往出现在同一眼望出去的地方。</p>
           </div>
           <a class="text-link" href="nature.html">了解更多 →</a>
         </div>
         <div class="story-grid four">
           <a class="story-card" href="nature.html#fjord">
-            <img src="https://images.unsplash.com/photo-1561810051-09dd8d26010c?auto=format&fit=crop&w=1200&q=80" alt="法罗群岛海面与岛屿轮廓" />
+            <img src="https://visitfaroeislands.com/download/4k4a5175_medium.jpg.webp" alt="法罗群岛海面与岛屿轮廓" />
             <div class="copy">
               <span>峡湾与海洋</span>
               <h3>海洋从未远离</h3>
@@ -190,7 +197,7 @@
             </div>
           </a>
           <a class="story-card" href="nature.html#mountains">
-            <img src="https://images.unsplash.com/photo-1539634262233-7c0b48ab9503?auto=format&fit=crop&w=1200&q=80" alt="法罗群岛海蚀岩柱" />
+            <img src="https://visitfaroeislands.com/download/0110-andrija-ilic-faroe-islands_medium.jpg.webp" alt="法罗群岛海蚀岩柱" />
             <div class="copy">
               <span>山峦与绿野</span>
               <h3>走进北大西洋的山野</h3>
@@ -198,7 +205,7 @@
             </div>
           </a>
           <a class="story-card" href="nature.html#wildlife">
-            <img src="https://images.unsplash.com/photo-1506457081075-a75337d186cc?auto=format&fit=crop&w=1200&q=80" alt="米基内斯岛草坡上的羊群" />
+            <img src="https://visitfaroeislands.com/download/birdwathing-skuvoy_0_medium.jpg.webp" alt="斯库沃伊岛上观鸟的人" />
             <div class="copy">
               <span>海鸟与野生动物</span>
               <h3>与岛屿的野生居民相遇</h3>
@@ -206,7 +213,7 @@
             </div>
           </a>
           <a class="story-card" href="nature.html#hiking">
-            <img src="https://images.unsplash.com/photo-1506457469115-39b5cced7b7a?auto=format&fit=crop&w=1200&q=80" alt="卡尔索伊岛 Kallur 灯塔" />
+            <img src="https://visitfaroeislands.com/download/img-9697_0_medium.jpg.webp" alt="卡尔索伊岛 Kallur 灯塔" />
             <div class="copy">
               <span>徒步</span>
               <h3>沿山径，走进法罗</h3>
@@ -220,18 +227,18 @@
         <div class="section-head split">
           <div>
             <p class="eyebrow">Culture · Food</p>
-            <h2>生活在海与山之间</h2>
-            <p class="section-lead">语言、建筑、节庆与餐桌，构成这座北大西洋群岛的日常。</p>
+            <h2><span class="line">生活在</span><span class="line">海与山之间</span></h2>
+            <p class="section-lead">语言、草顶、节庆和餐桌，都是这座群岛的日常。</p>
           </div>
           <a class="text-link" href="culture.html">开始探索 →</a>
         </div>
         <div class="arrive-grid">
           <a class="arrive-panel" href="culture.html">
-            <img src="https://images.unsplash.com/photo-1506462313968-6a1f37574ec6?auto=format&fit=crop&w=1200&q=80" alt="托尔斯港草顶木屋" />
+            <img src="https://visitfaroeislands.com/download/torshavn-visit-faroe-islands-june-2022-26_medium.jpg.webp" alt="托尔斯港草顶木屋" />
             <div class="arrive-label"><strong>人文</strong></div>
           </a>
           <a class="arrive-panel" href="food.html">
-            <img src="https://images.unsplash.com/photo-1564216380254-072195a3d560?auto=format&fit=crop&w=1200&q=80" alt="法罗群岛村落与牧场" />
+            <img src="https://visitfaroeislands.com/download/faroe-islands-torshavn-roks-restaurant-food-04646_0_medium.jpg.webp" alt="托尔斯港餐厅里的法罗菜" />
             <div class="arrive-label"><strong>美食</strong></div>
           </a>
         </div>
@@ -245,11 +252,11 @@
         </div>
         <div class="arrive-grid">
           <a class="arrive-panel" href="plan.html#air">
-            <img src="https://images.unsplash.com/photo-1517751243320-0cc45ec82da7?auto=format&fit=crop&w=1200&q=80" alt="从空中俯瞰法罗群岛" />
+            <img src="https://visitfaroeislands.com/download/curvy-roads-of-the-faroe-islands_medium.jpg.webp" alt="从空中俯瞰法罗群岛" />
             <div class="arrive-label"><strong>乘飞机抵达</strong></div>
           </a>
           <a class="arrive-panel" href="plan.html#sea">
-            <img src="https://images.unsplash.com/photo-1561810051-09dd8d26010c?auto=format&fit=crop&w=1200&q=80" alt="北大西洋上的法罗群岛" />
+            <img src="https://visitfaroeislands.com/download/norrona-sailing-past-an-island_medium.jpg.webp" alt="北大西洋上的法罗群岛" />
             <div class="arrive-label"><strong>乘渡轮抵达</strong></div>
           </a>
         </div>
@@ -257,7 +264,7 @@
           <a href="plan.html#stay">住宿</a>
           <a href="plan.html#around">岛上交通</a>
           <a href="plan.html#safe">安全旅行</a>
-          <a href="plan.html#72h">72小时旅行指南</a>
+          <a href="plan.html#guide-72">72小时旅行指南</a>
         </div>
       </section>
 
@@ -272,20 +279,20 @@
         <div class="event-row">
           <article class="event-block" data-fav-id="evt-nordic" data-fav-title="北欧之家文化季" data-fav-type="活动">
             <time datetime="2026-10-12">10.12 — 10.28</time>
-            <h3>北欧之家文化季</h3>
-            <p>托尔斯港 Tórshavn｜音乐 · 展览 · 讲座</p>
+            <h3><a href="whats-on.html#detail-nordic">北欧之家的秋天</a></h3>
+            <p>音乐会、展览和讲座排在托尔斯港同一座房子里。散场后，可以沿着港口慢慢走回去。</p>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
           <article class="event-block" data-fav-id="evt-hike" data-fav-title="向导徒步：Kallur 灯塔" data-fav-type="活动">
             <time>每周末</time>
-            <h3>向导徒步：Kallur 灯塔</h3>
-            <p>卡尔索伊岛 Kalsoy｜中等难度</p>
+            <h3><a href="whats-on.html#detail-kallur">走向 Kallur 灯塔</a></h3>
+            <p>卡尔索伊岛的山径不长，风却很大。跟熟悉天气的向导走，会安心很多。</p>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
           <article class="event-block" data-fav-id="evt-food" data-fav-title="法罗风味餐桌" data-fav-type="活动">
             <time datetime="2026-11-05">11月5日</time>
-            <h3>法罗风味餐桌</h3>
-            <p>当地农家｜Heim体验</p>
+            <h3><a href="whats-on.html#detail-food">坐下来，吃一顿法罗</a></h3>
+            <p>餐厅里有当日渔获，也有风干羊肉。想更安静，就预约一户人家的餐桌。</p>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
         </div>
@@ -306,7 +313,7 @@
         <div class="guide-list">
           <a href="plan.html#safe"><span>01</span>安全旅行与徒步须知<i>→</i></a>
           <a href="plan.html#pack"><span>02</span>行李清单与旅行准备<i>→</i></a>
-          <a href="plan.html#72h"><span>03</span>72小时法罗旅行指南<i>→</i></a>
+          <a href="plan.html#guide-72"><span>03</span>72小时法罗旅行指南<i>→</i></a>
           <a href="whats-on.html"><span>04</span>本月活动精选<i>→</i></a>
         </div>
       </section>
