@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>美食｜探访法罗｜吴梓谦 &amp; 李雨涵</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@300;400;500&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header solid" id="top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>探访法罗</strong>
+          <small>Visit Faroe Islands</small>
+        </span>
+      </a>
+      <nav class="nav-desktop" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="plan.html">旅行指南</a>
+        <a href="nature.html">自然</a>
+        <a href="culture.html">人文</a>
+        <a href="food.html">美食</a>
+        <a href="whats-on.html">活动</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="searchToggle" aria-label="搜索">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" />
+          </svg>
+        </button>
+        <button type="button" class="icon-btn" id="favToggle" aria-label="我的收藏">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z" />
+          </svg>
+          <span class="fav-count" id="favCount" hidden>0</span>
+        </button>
+        <button type="button" class="icon-btn menu-btn" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="search-panel" id="searchPanel" hidden>
+      <div class="search-inner">
+        <input type="search" id="siteSearch" placeholder="搜索徒步、景点、住宿、活动……" autocomplete="off" />
+        <ul id="searchResults" class="search-results"></ul>
+      </div>
+    </div>
+    <aside class="drawer" id="navDrawer" hidden>
+      <div class="drawer-backdrop" data-close-drawer></div>
+      <div class="drawer-panel" role="dialog" aria-label="菜单">
+        <button type="button" class="drawer-close" data-close-drawer aria-label="关闭">×</button>
+        <p class="drawer-kicker">Góðan dag</p>
+        <nav>
+          <a href="index.html">首页</a>
+          <a href="plan.html">旅行指南</a>
+          <a href="nature.html">自然</a>
+          <a href="culture.html">人文</a>
+          <a href="food.html">美食</a>
+          <a href="whats-on.html">活动</a>
+        </nav>
+      </div>
+    </aside>
+    <aside class="fav-drawer" id="favDrawer" hidden>
+      <div class="drawer-backdrop" data-close-fav></div>
+      <div class="drawer-panel fav-panel" role="dialog" aria-label="我的收藏">
+        <button type="button" class="drawer-close" data-close-fav aria-label="关闭">×</button>
+        <h2>我的收藏</h2>
+        <p class="fav-hint">保存你感兴趣的风景、活动与旅行灵感。</p>
+        <ul id="favList" class="fav-list"></ul>
+      </div>
+    </aside>
+
+    <main>
+      <header class="page-intro">
+        <p class="eyebrow">Food &amp; Drink</p>
+        <h1>尝一口法罗</h1>
+        <p class="lead">海洋、牧场与岛屿生活，共同塑造了法罗独特的味觉。</p>
+      </header>
+      <div class="page-bleed">
+        <img
+          src="https://images.unsplash.com/photo-1564216380254-072195a3d560?auto=format&fit=crop&w=2000&q=85"
+          alt="法罗群岛牧场与村落"
+        />
+      </div>
+
+      <section class="content-block" id="sea-taste">
+        <article class="topic">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1561810051-09dd8d26010c?auto=format&fit=crop&w=1400&q=80" alt="北大西洋海面" />
+          </div>
+          <div class="topic-body">
+            <p class="eyebrow">海洋的味道</p>
+            <h2>新鲜海产与北大西洋的风味</h2>
+            <p>渔业仍是法罗生活的根基。鳕鱼、鲑鱼与其他北大西洋海产出现在港口餐厅与家庭餐桌。托尔斯港是品尝当日渔获最方便的起点。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-block" id="pasture">
+        <article class="topic reverse">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1506457081075-a75337d186cc?auto=format&fit=crop&w=1400&q=80" alt="法罗草坡上的羊群" />
+          </div>
+          <div class="topic-body">
+            <p class="eyebrow">来自牧场</p>
+            <h2>羊肉、奶制品与当地食材</h2>
+            <p>
+              羊几乎是法罗风景的一部分。传统风干羊肉 skerpikjøt 气味浓烈，是岛屿饮食记忆的核心之一。牧场、根茎蔬菜与简短的生长季，决定了法罗厨房的克制与鲜明。
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-block" id="table">
+        <article class="topic">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1506462313968-6a1f37574ec6?auto=format&fit=crop&w=1400&q=80" alt="托尔斯港街道与房屋" />
+          </div>
+          <div class="topic-body">
+            <p class="eyebrow">法罗餐桌</p>
+            <h2>从传统风味到现代北欧料理</h2>
+            <p>在托尔斯港，传统保存食物与当代北欧料理并存。不必把法罗简化成“猎奇”，更值得注意的是：海、风与季节，如何进入每一道菜。</p>
+            <a class="text-link" href="whats-on.html">查看活动 →</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-block" id="heim">
+        <article class="topic reverse" data-fav-id="food-heim" data-fav-title="Heim｜走进当地人的餐桌" data-fav-type="美食">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1583613774245-3d44b74a4477?auto=format&fit=crop&w=1400&q=80" alt="法罗山坡上的人家" />
+          </div>
+          <div class="topic-body">
+            <p class="eyebrow">Heim</p>
+            <h2>Heim｜走进当地人的餐桌</h2>
+            <p>
+              Heim 是 Visit Faroe Islands 推广的当地体验：走进岛民家中，分享时令食材与生活故事。它不是观光化的农家宴，而是一次被邀请进入岛屿日常的机会。
+            </p>
+            <a class="text-link" href="whats-on.html">了解更多 →</a>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>探访法罗</strong>
+          <small>Visit Faroe Islands</small>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h4>探索</h4>
+            <a href="index.html">首页</a>
+            <a href="nature.html">自然</a>
+            <a href="culture.html">人文</a>
+            <a href="food.html">美食</a>
+            <a href="whats-on.html">活动</a>
+          </div>
+          <div>
+            <h4>旅行</h4>
+            <a href="plan.html">旅行指南</a>
+            <a href="plan.html#safe">安全旅行</a>
+            <a href="plan.html#stay">住宿</a>
+            <a href="plan.html#around">岛上交通</a>
+          </div>
+          <div>
+            <h4>关于</h4>
+            <a href="about.html">关于法罗</a>
+            <a href="about.html#site">关于本网站</a>
+            <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener">Visit Faroe Islands</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-credit">
+        <span class="label">网页创作者</span>
+        吴梓谦｜翻译合办2402｜20241203611<br />
+        李雨涵｜翻译合办2402｜20241203561
+      </p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

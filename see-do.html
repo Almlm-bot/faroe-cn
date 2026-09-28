@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=nature.html" />
+    <title>观光体验｜探访法罗</title>
+    <script>
+      (function () {
+        var map = {
+          hiking: "nature.html#hiking",
+          sea: "nature.html#fjord",
+          sights: "nature.html#mountains",
+          nature: "nature.html",
+          food: "food.html",
+          culture: "culture.html",
+        };
+        var key = (location.hash || "").replace("#", "");
+        location.replace(map[key] || "nature.html");
+      })();
+    </script>
+  </head>
+  <body>
+    <p><a href="nature.html">前往自然</a> · <a href="culture.html">人文</a> · <a href="food.html">美食</a></p>
+  </body>
+</html>

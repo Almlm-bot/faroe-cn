@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>旅行指南｜探访法罗｜吴梓谦 &amp; 李雨涵</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@300;400;500&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header solid" id="top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <strong>探访法罗</strong>
+          <small>Visit Faroe Islands</small>
+        </span>
+      </a>
+      <nav class="nav-desktop" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="plan.html">旅行指南</a>
+        <a href="nature.html">自然</a>
+        <a href="culture.html">人文</a>
+        <a href="food.html">美食</a>
+        <a href="whats-on.html">活动</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="icon-btn" id="searchToggle" aria-label="搜索">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" />
+          </svg>
+        </button>
+        <button type="button" class="icon-btn" id="favToggle" aria-label="我的收藏">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.5-7 10-7 10z" />
+          </svg>
+          <span class="fav-count" id="favCount" hidden>0</span>
+        </button>
+        <button type="button" class="icon-btn menu-btn" id="menuToggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <div class="search-panel" id="searchPanel" hidden>
+      <div class="search-inner">
+        <input type="search" id="siteSearch" placeholder="搜索徒步、景点、住宿、活动……" autocomplete="off" />
+        <ul id="searchResults" class="search-results"></ul>
+      </div>
+    </div>
+    <aside class="drawer" id="navDrawer" hidden>
+      <div class="drawer-backdrop" data-close-drawer></div>
+      <div class="drawer-panel" role="dialog" aria-label="菜单">
+        <button type="button" class="drawer-close" data-close-drawer aria-label="关闭">×</button>
+        <p class="drawer-kicker">Góðan dag</p>
+        <nav>
+          <a href="index.html">首页</a>
+          <a href="plan.html">旅行指南</a>
+          <a href="nature.html">自然</a>
+          <a href="culture.html">人文</a>
+          <a href="food.html">美食</a>
+          <a href="whats-on.html">活动</a>
+        </nav>
+      </div>
+    </aside>
+    <aside class="fav-drawer" id="favDrawer" hidden>
+      <div class="drawer-backdrop" data-close-fav></div>
+      <div class="drawer-panel fav-panel" role="dialog" aria-label="我的收藏">
+        <button type="button" class="drawer-close" data-close-fav aria-label="关闭">×</button>
+        <h2>我的收藏</h2>
+        <p class="fav-hint">保存你感兴趣的风景、活动与旅行灵感。</p>
+        <ul id="favList" class="fav-list"></ul>
+      </div>
+    </aside>
+
+    <main>
+      <header class="page-intro">
+        <p class="eyebrow">Plan your stay</p>
+        <h1>开始你的法罗之旅</h1>
+        <p class="lead">从如何抵达，到住在哪里、如何游览岛屿，提前做好旅行准备。</p>
+      </header>
+      <div class="page-bleed">
+        <img
+          src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=85"
+          alt="法罗群岛山脊道路与大西洋"
+        />
+      </div>
+
+      <section class="content-block" id="air">
+        <div class="section-head center">
+          <p class="eyebrow">Getting here</p>
+          <h2>如何抵达</h2>
+        </div>
+        <div class="arrive-grid">
+          <a class="arrive-panel" href="#air-detail">
+            <img src="https://images.unsplash.com/photo-1517751243320-0cc45ec82da7?auto=format&fit=crop&w=1200&q=80" alt="法罗群岛空中视角" />
+            <div class="arrive-label"><strong>乘飞机抵达</strong></div>
+          </a>
+          <a class="arrive-panel" href="#sea">
+            <img src="https://images.unsplash.com/photo-1561810051-09dd8d26010c?auto=format&fit=crop&w=1200&q=80" alt="从海上接近法罗群岛" />
+            <div class="arrive-label"><strong>乘渡轮抵达</strong></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="content-block" id="air-detail">
+        <article class="topic">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1652038930872-5ee33c17ca10?auto=format&fit=crop&w=1400&q=80" alt="瓦加尔岛悬崖" />
+          </div>
+          <div class="topic-body">
+            <p class="meta">By air</p>
+            <h2>乘飞机抵达 Vágar</h2>
+            <p>
+              国际航班主要降落在瓦加尔机场 Vágar Airport（FAE）。从丹麦、冰岛、挪威等地有全年或季节性航线。落地后可租车或搭乘机场巴士前往首都托尔斯港 Tórshavn。
+            </p>
+            <p>请预留缓冲时间：北大西洋天气可能影响起降与接驳。</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-block" id="sea">
+        <article class="topic reverse">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1539634936668-036d13a9cc3b?auto=format&fit=crop&w=1400&q=80" alt="法罗峡湾" />
+          </div>
+          <div class="topic-body">
+            <p class="meta">By sea</p>
+            <h2>乘渡轮抵达</h2>
+            <p>
+              渡轮连接丹麦等地与托尔斯港，适合携带车辆与自行车的旅行者。航程本身就是一段海上过渡：雾、浪，以及逐渐清晰的群岛轮廓。出发前请核实时刻表与预订信息。
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-block" id="stay">
+        <div class="section-head">
+          <p class="eyebrow">Staying here</p>
+          <h2>住宿</h2>
+          <p class="section-lead">酒店、宾馆、民宿与露营地——从托尔斯港到偏远村落，旺季请提前预订。</p>
+        </div>
+        <div class="place-list">
+          <article class="place-item" data-fav-id="stay-hotel" data-fav-title="城市酒店" data-fav-type="住宿">
+            <div>
+              <p class="meta">Hotels</p>
+              <h3>酒店</h3>
+            </div>
+            <p>多集中在托尔斯港，交通便利，适合短途停留，步行可达港口与餐厅。</p>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
+          <article class="place-item" data-fav-id="stay-bnb" data-fav-title="民宿与宾馆" data-fav-type="住宿">
+            <div>
+              <p class="meta">Guesthouses &amp; B&amp;Bs</p>
+              <h3>民宿与宾馆</h3>
+            </div>
+            <p>更具本地气息，主人常能推荐适合当日天气的路线。</p>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
+          <article class="place-item" data-fav-id="stay-camp" data-fav-title="露营地" data-fav-type="住宿">
+            <div>
+              <p class="meta">Camping</p>
+              <h3>露营地</h3>
+            </div>
+            <p>请在指定营地扎营。不要在未许可的私人土地宿营。</p>
+            <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-block" id="around">
+        <div class="section-head">
+          <p class="eyebrow">Getting around</p>
+          <h2>岛上交通</h2>
+        </div>
+        <article class="topic">
+          <div class="topic-media">
+            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1400&q=80" alt="法罗山间道路" />
+          </div>
+          <div class="topic-body">
+            <h3>自驾、巴士与渡轮</h3>
+            <p>
+              隧道、渡船与山路串起各岛。自驾最自由，请放慢车速，留意羊群、雾天能见度与单车道。公共交通由 SSL（Strandfaraskip Landsins）运营巴士与部分渡轮；自行车适合短途，长途需考虑风与地形。
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-block" id="safe">
+        <div class="section-head">
+          <p class="eyebrow">Stay safe</p>
+          <h2>安全旅行</h2>
+          <p class="section-lead">法罗的自然脆弱而壮美。遵循小径、尊重私人土地，让岛屿对下一位旅人依然敞开。</p>
+        </div>
+        <div class="guide-list" id="hiking-notes">
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener"><span>01</span>安全徒步指南<i>→</i></a>
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener"><span>02</span>徒步须知与准入<i>→</i></a>
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener"><span>03</span>健康与安全<i>→</i></a>
+          <a href="#pack"><span>04</span>天气与出行<i>→</i></a>
+        </div>
+        <p class="section-lead" style="margin-top: 1.5rem">
+          部分山径位于私人土地，可能需要向导或支付徒步准入费用。请以 Visit Faroe Islands 与当地向导的最新说明为准，不要擅自翻越围栏或靠近悬崖边缘。
+        </p>
+      </section>
+
+      <section class="content-block" id="pack">
+        <div class="section-head">
+          <p class="eyebrow">Get ready</p>
+          <h2>行前准备</h2>
+        </div>
+        <div class="fact-strip">
+          <div class="fact">
+            <strong>01</strong>
+            <span>分层穿衣：风雨无常，防水外套与保暖层必备</span>
+          </div>
+          <div class="fact">
+            <strong>02</strong>
+            <span>结实鞋履：潮湿草地与碎石小径需要抓地力</span>
+          </div>
+          <div class="fact">
+            <strong>03</strong>
+            <span>弹性行程：为雾天、风力与船班改期留出余地</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block" id="72h">
+        <div class="section-head">
+          <p class="eyebrow">72-hour guide</p>
+          <h2>72小时旅行指南</h2>
+          <p class="section-lead">时间有限时，用这三天抓住岛屿的基本气质，再按兴趣延展。</p>
+        </div>
+        <div class="event-row">
+          <article class="event-block">
+            <time>Day 1</time>
+            <h3>托尔斯港慢行</h3>
+            <p>港口、Tinganes、北欧之家，以及第一顿海鲜晚餐。</p>
+          </article>
+          <article class="event-block">
+            <time>Day 2</time>
+            <h3>一条经典徒步</h3>
+            <p>选择适合体能的向导路线，体验悬崖与大西洋的尺度。</p>
+          </article>
+          <article class="event-block">
+            <time>Day 3</time>
+            <h3>村落与西岛风光</h3>
+            <p>探访瓦加尔岛等地的村庄与瀑布，为返程留出天气缓冲。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-block" id="help">
+        <div class="section-head">
+          <p class="eyebrow">Need a little help?</p>
+          <h2>需要帮助？</h2>
+          <p class="section-lead">地区信息服务中心与专业旅游服务商可协助行程安排。最新信息请查阅官方渠道。</p>
+        </div>
+        <div class="plan-links" style="justify-content: flex-start">
+          <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener">Visit Faroe Islands</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <strong>探访法罗</strong>
+          <small>Visit Faroe Islands</small>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h4>探索</h4>
+            <a href="index.html">首页</a>
+            <a href="nature.html">自然</a>
+            <a href="culture.html">人文</a>
+            <a href="food.html">美食</a>
+            <a href="whats-on.html">活动</a>
+          </div>
+          <div>
+            <h4>旅行</h4>
+            <a href="plan.html">旅行指南</a>
+            <a href="plan.html#safe">安全旅行</a>
+            <a href="plan.html#stay">住宿</a>
+            <a href="plan.html#around">岛上交通</a>
+          </div>
+          <div>
+            <h4>关于</h4>
+            <a href="about.html">关于法罗</a>
+            <a href="about.html#site">关于本网站</a>
+            <a href="https://visitfaroeislands.com/en" target="_blank" rel="noopener">Visit Faroe Islands</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-credit">
+        <span class="label">网页创作者</span>
+        吴梓谦｜翻译合办2402｜20241203611<br />
+        李雨涵｜翻译合办2402｜20241203561
+      </p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
