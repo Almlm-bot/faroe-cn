@@ -343,13 +343,14 @@ function initTiltCarousel() {
   const next = row.querySelector("[data-tilt-next]");
   let active = 3;
 
+  const caption = row.querySelector("[data-tilt-caption]");
+
   track.innerHTML = TILT_ASSETS.map(
     (item, i) => `
-      <button type="button" class="tilt-slide" data-tilt-index="${i}" style="--i:${i}">
+      <button type="button" class="tilt-slide" data-tilt-index="${i}">
         <span class="tilt-face">
           <img src="${item.src}" alt="${item.title}" />
         </span>
-        <span class="tilt-caption">${item.title}</span>
       </button>`
   ).join("");
 
@@ -358,25 +359,35 @@ function initTiltCarousel() {
       `<button type="button" class="tilt-dot" data-tilt-index="${i}" aria-label="第 ${i + 1} 张"></button>`
   ).join("");
 
-  function render() {
-    row.style.setProperty("--active", String(active));
+  function render(animate) {
+    const total = TILT_ASSETS.length;
+    caption.textContent = TILT_ASSETS[active].title;
     track.querySelectorAll(".tilt-slide").forEach((el, i) => {
-      const on = i === active;
-      el.classList.toggle("is-active", on);
-      el.setAttribute("aria-current", on ? "true" : "false");
+      let offset = i - active;
+      if (offset > total / 2) offset -= total;
+      if (offset < -total / 2) offset += total;
+      const previous = Number(el.dataset.offset);
+      const jump = !animate || (Number.isFinite(previous) && Math.abs(offset - previous) > 1);
+      el.dataset.offset = String(offset);
+      el.style.setProperty("--offset", String(offset));
+      el.style.zIndex = String(30 - Math.abs(offset));
+      el.classList.toggle("is-active", offset === 0);
+      el.classList.toggle("is-far", Math.abs(offset) > 4);
+      el.classList.toggle("is-jump", jump);
+      el.setAttribute("aria-current", offset === 0 ? "true" : "false");
+      if (jump) requestAnimationFrame(() => el.classList.remove("is-jump"));
     });
     dots.querySelectorAll(".tilt-dot").forEach((el, i) => {
       const on = i === active;
       el.classList.toggle("is-active", on);
       el.setAttribute("aria-current", on ? "true" : "false");
     });
-    prev.disabled = active === 0;
-    next.disabled = active === TILT_ASSETS.length - 1;
   }
 
   function go(index) {
-    active = Math.max(0, Math.min(TILT_ASSETS.length - 1, index));
-    render();
+    const total = TILT_ASSETS.length;
+    active = ((index % total) + total) % total;
+    render(true);
   }
 
   prev.addEventListener("click", () => go(active - 1));
