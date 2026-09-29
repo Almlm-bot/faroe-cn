@@ -1486,6 +1486,13 @@ main,
 
 .discover-copy {
   max-width: 40rem;
+  line-height: 1.85;
+  color: var(--rock);
+  text-wrap: pretty;
+}
+
+#intro h2 {
+  word-break: keep-all;
 }
 
 .discover-copy p + p {
