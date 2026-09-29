@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@300;400;500&family=Syne:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <header class="site-header solid" id="top">
@@ -93,11 +93,11 @@
 
       <section class="content-block">
         <div class="chip-row" role="tablist" aria-label="活动分类">
-          <button type="button" class="chip active" data-filter="all">全部</button>
-          <button type="button" class="chip" data-filter="event">文化活动</button>
-          <button type="button" class="chip" data-filter="hike">徒步</button>
-          <button type="button" class="chip" data-filter="food">美食体验</button>
-          <button type="button" class="chip" data-filter="place">地点</button>
+          <button type="button" class="chip active" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" class="chip" data-filter="event" aria-pressed="false">文化活动</button>
+          <button type="button" class="chip" data-filter="hike" aria-pressed="false">徒步</button>
+          <button type="button" class="chip" data-filter="food" aria-pressed="false">美食体验</button>
+          <button type="button" class="chip" data-filter="place" aria-pressed="false">地点</button>
         </div>
 
         <div class="event-list">
@@ -105,7 +105,7 @@
             <time datetime="2026-10-12">10.12 — 10.28</time>
             <div>
               <h3>北欧之家文化季</h3>
-              <p>托尔斯港 Tórshavn｜音乐 · 展览 · 讲座</p>
+              <p>托尔斯港北欧之家，这几周有音乐会、展览和讲座。</p>
             </div>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
@@ -114,7 +114,7 @@
             <time>每周末</time>
             <div>
               <h3>向导徒步：Kallur 灯塔</h3>
-              <p>卡尔索伊岛 Kalsoy｜中等难度</p>
+              <p>在卡尔索伊岛，周末可以跟向导去灯塔，路不算太陡。</p>
             </div>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
@@ -123,7 +123,7 @@
             <time datetime="2026-11-05">11月5日</time>
             <div>
               <h3>法罗风味餐桌</h3>
-              <p>当地农家｜Heimablídni体验</p>
+              <p>到岛民家里吃饭，菜是主人当天准备的。</p>
             </div>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
@@ -132,7 +132,7 @@
             <time>全天</time>
             <div>
               <h3>Tinganes 红木屋半岛</h3>
-              <p>托尔斯港 Tórshavn｜历史街区 · 漫步</p>
+              <p>托尔斯港老城区那条半岛，红木屋一栋挨着一栋。</p>
             </div>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
@@ -141,7 +141,7 @@
             <time>需看潮汐</time>
             <div>
               <h3>Saksun 与潮汐泻湖</h3>
-              <p>斯特勒莫伊岛 Streymoy｜村落 · 自然</p>
+              <p>斯特勒莫伊岛的村子，出发前先看一下潮水。</p>
             </div>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
@@ -150,7 +150,7 @@
             <time>晴好天气</time>
             <div>
               <h3>Slættaratindur 最高峰</h3>
-              <p>埃斯图罗伊岛 Eysturoy｜远足</p>
+              <p>埃斯图罗伊岛最高的山，要挑晴天，走起来比较久。</p>
             </div>
             <button type="button" class="fav-btn inline" data-fav>♡ 收藏</button>
           </article>
@@ -194,6 +194,6 @@
         李雨涵｜翻译合办2402｜20241203561
       </p>
     </footer>
-    <script src="app.js"></script>
+    <script src="app.js?v=2"></script>
   </body>
 </html>

@@ -876,6 +876,12 @@ main,
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   background: transparent;
+  cursor: pointer;
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--sea);
+  outline-offset: 2px;
 }
 
 .chip.active,
@@ -917,6 +923,10 @@ main,
   margin: 0;
   color: var(--rock);
   font-size: 0.9rem;
+}
+
+.event-item[hidden] {
+  display: none !important;
 }
 
 .meta {
