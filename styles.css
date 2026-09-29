@@ -1504,6 +1504,11 @@ main,
   gap: 0.7rem;
 }
 
+.discover-card {
+  display: block;
+  color: inherit;
+}
+
 .discover-photos figure {
   margin: 0;
   overflow: hidden;
@@ -1514,12 +1519,21 @@ main,
   height: 16rem;
   object-fit: cover;
   display: block;
+  transition: transform 1.1s var(--ease);
+}
+
+.discover-card-food {
+  object-position: center 28%;
+  background: #1a1410;
+}
+
+.discover-card:hover img {
+  transform: scale(1.04);
 }
 
 .discover-photos figcaption {
   margin-top: 0.55rem;
-  font-size: 0.88rem;
-  color: var(--rock);
+  font-size: 0.95rem;
   letter-spacing: 0.04em;
 }
 
