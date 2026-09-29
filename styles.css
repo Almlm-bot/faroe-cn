@@ -1496,16 +1496,17 @@ main,
 }
 
 .discover-intro-media {
-  position: relative;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1.1fr 0.95fr 1.05fr;
+  gap: 0.55rem;
   min-height: 22rem;
+  overflow: hidden;
 }
 
 .discover-intro-media img {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
+  min-height: 0;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -1535,7 +1536,13 @@ main,
 
   .discover-intro-media {
     order: 2;
-    min-height: 16rem;
+    grid-template-rows: none;
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .discover-intro-media img {
+    height: 12rem;
   }
 }
 
