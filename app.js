@@ -299,44 +299,44 @@ function initActiveNav() {
 
 const TILT_ASSETS = [
   {
-    src: "https://images.unsplash.com/photo-1769921546096-7a648d953a3e?q=80&w=500&auto=format&fit=crop",
-    title: "urban exploration",
+    src: "assets/discover-culture.webp",
+    title: "村落里的人们",
   },
   {
-    src: "https://images.unsplash.com/photo-1777726515600-65be20641e1b?q=80&w=500&auto=format&fit=crop",
-    title: "night scene",
+    src: "assets/culture-festival.webp",
+    title: "节庆与传统",
   },
   {
-    src: "https://images.unsplash.com/photo-1776582929657-9710d9cfa46a?q=80&w=500&auto=format&fit=crop",
-    title: "yellow wildflowers",
+    src: "assets/discover-events.webp",
+    title: "奥拉夫斯节",
   },
   {
-    src: "https://images.unsplash.com/photo-1776582929656-78ad8b515d75?q=80&w=500&auto=format&fit=crop",
-    title: "street with mount fuji",
+    src: "assets/arrive-by-ferry.webp",
+    title: "峡湾与渡轮",
   },
   {
-    src: "https://images.unsplash.com/photo-1775990630948-3c1f696f4ab1?q=80&w=500&auto=format&fit=crop",
-    title: "bridgestone bicycle shop",
+    src: "assets/culture-stage.avif",
+    title: "舞台与音乐",
   },
   {
-    src: "https://images.unsplash.com/photo-1775380744191-8fbff371c40b?q=80&w=500&auto=format&fit=crop",
-    title: "train window view",
+    src: "assets/home-culture.jpg",
+    title: "山坡上的村落",
   },
   {
-    src: "https://images.unsplash.com/photo-1774775479879-082fd47d41e1?q=80&w=500&auto=format&fit=crop",
-    title: "train tracks",
+    src: "assets/whats-on-concert.webp",
+    title: "岛上音乐会",
   },
   {
-    src: "https://images.unsplash.com/photo-1773544517453-95c148cb42b7?q=80&w=500&auto=format&fit=crop",
-    title: "lawson convenience store",
+    src: "assets/heimablidni.jpg",
+    title: "Heimablídni",
   },
   {
-    src: "https://images.unsplash.com/photo-1771385809377-9b0348e1f8dc?q=80&w=500&auto=format&fit=crop",
-    title: "street scene",
+    src: "assets/sea-taste.jpg",
+    title: "海上风味",
   },
   {
-    src: "https://images.unsplash.com/photo-1775990631076-f6f208079475?q=80&w=500&auto=format&fit=crop",
-    title: "japanese culture",
+    src: "assets/arrive-by-air.webp",
+    title: "从空中看见法罗",
   },
 ];
 
