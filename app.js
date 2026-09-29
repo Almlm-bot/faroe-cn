@@ -299,44 +299,44 @@ function initActiveNav() {
 
 const TILT_ASSETS = [
   {
-    src: "assets/discover-culture.webp",
-    title: "村落里的人们",
+    src: "assets/tilt-gasadalur.webp",
+    title: "Gásadalur 瀑布",
   },
   {
-    src: "assets/culture-festival.webp",
-    title: "节庆与传统",
+    src: "assets/tilt-hike.webp",
+    title: "山径徒步",
   },
   {
-    src: "assets/discover-events.webp",
-    title: "奥拉夫斯节",
+    src: "assets/tilt-people.webp",
+    title: "岛上相聚",
   },
   {
-    src: "assets/arrive-by-ferry.webp",
-    title: "峡湾与渡轮",
+    src: "assets/tilt-kallur.webp",
+    title: "Kallur 灯塔",
   },
   {
-    src: "assets/culture-stage.avif",
-    title: "舞台与音乐",
+    src: "assets/tilt-suduroy.webp",
+    title: "海边的风浪",
   },
   {
-    src: "assets/home-culture.jpg",
-    title: "山坡上的村落",
+    src: "assets/tilt-bike.webp",
+    title: "沿海骑行",
   },
   {
-    src: "assets/whats-on-concert.webp",
-    title: "岛上音乐会",
+    src: "assets/tilt-lake.webp",
+    title: "山间湖泊",
   },
   {
-    src: "assets/heimablidni.jpg",
-    title: "Heimablídni",
+    src: "assets/tilt-sea.webp",
+    title: "海上活动",
   },
   {
-    src: "assets/sea-taste.jpg",
-    title: "海上风味",
+    src: "assets/tilt-torshavn.webp",
+    title: "林间小路",
   },
   {
-    src: "assets/arrive-by-air.webp",
-    title: "从空中看见法罗",
+    src: "assets/tilt-nature.webp",
+    title: "草甸与山风",
   },
 ];
 
