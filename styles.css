@@ -1470,8 +1470,78 @@ main,
     grid-template-columns: 2rem 1fr auto;
   }
 
+  .discover-photos img {
+    height: 12.5rem;
+  }
+
+  .map-frame {
+    aspect-ratio: 1 / 1;
+    min-height: 14rem;
+  }
+
   .btn {
     padding: 0.75rem 1.1rem;
+  }
+}
+
+.discover-copy {
+  max-width: 40rem;
+}
+
+.discover-copy p + p {
+  margin-top: 1rem;
+}
+
+.discover-photos {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.discover-photos figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+.discover-photos img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  display: block;
+}
+
+.discover-photos figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--rock);
+  letter-spacing: 0.04em;
+}
+
+.map-frame {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 16rem;
+  overflow: hidden;
+  background: #dfe6ea;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-note {
+  margin-top: 0.9rem;
+}
+
+@media (min-width: 800px) {
+  .discover-photos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .discover-photos img {
+    height: 18rem;
   }
 }
 

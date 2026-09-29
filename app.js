@@ -14,6 +14,7 @@ const SEARCH_INDEX = [
   { title: "住宿", type: "旅行指南", href: "plan.html#stay", keywords: "酒店 旅馆 露营 民宿" },
   { title: "岛上交通", type: "旅行指南", href: "plan.html#around", keywords: "租车 公交 自行车 隧道" },
   { title: "走进法罗", type: "旅行指南", href: "plan.html#safe", keywords: "安全 徒步费 责任 天气 走进法罗" },
+  { title: "认识法罗", type: "旅行指南", href: "discover.html", keywords: "简介 法罗群岛 地图 位置 托尔斯港 认识法罗" },
   { title: "行前准备", type: "旅行指南", href: "plan.html#pack", keywords: "行李 打包 装备" },
   { title: "72小时旅行指南", type: "旅行指南", href: "plan.html#72h", keywords: "行程 三天 指南 72" },
   { title: "活动日历", type: "活动", href: "whats-on.html", keywords: "活动 节日 音乐会 徒步" },
