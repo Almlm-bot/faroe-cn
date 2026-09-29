@@ -1,5 +1,5 @@
 const SEARCH_INDEX = [
-  { title: "徒步须知", type: "旅行指南", href: "plan.html#hiking-notes", keywords: "徒步 远足 登山 hiking 灯塔 Kallur" },
+  { title: "徒步须知", type: "旅行指南", href: "hiking.html", keywords: "徒步 远足 登山 hiking 灯塔 Kallur 安全" },
   { title: "峡湾与海洋", type: "自然", href: "nature.html#fjord", keywords: "海 船 观鸟 峡湾 海洋" },
   { title: "山峦与绿野", type: "自然", href: "nature.html#mountains", keywords: "山 草地 悬崖 景点" },
   { title: "海鸟与野生动物", type: "自然", href: "nature.html#wildlife", keywords: "海鸟 羊 野生动物 海鹦" },
@@ -15,6 +15,8 @@ const SEARCH_INDEX = [
   { title: "岛上交通", type: "旅行指南", href: "plan.html#around", keywords: "租车 公交 自行车 隧道" },
   { title: "走进法罗", type: "旅行指南", href: "plan.html#safe", keywords: "安全 徒步费 责任 天气 走进法罗" },
   { title: "认识法罗", type: "旅行指南", href: "discover.html", keywords: "简介 法罗群岛 地图 位置 托尔斯港 认识法罗" },
+  { title: "走近法罗", type: "人文", href: "culture.html", keywords: "人文 走近法罗 传统 村落" },
+  { title: "安全徒步指南", type: "旅行指南", href: "hiking.html", keywords: "徒步 安全 天气 装备 悬崖 向导 预报" },
   { title: "行前准备", type: "旅行指南", href: "plan.html#pack", keywords: "行李 打包 装备" },
   { title: "72小时旅行指南", type: "旅行指南", href: "plan.html#72h", keywords: "行程 三天 指南 72" },
   { title: "活动日历", type: "活动", href: "whats-on.html", keywords: "活动 节日 音乐会 徒步" },
@@ -406,6 +408,120 @@ function initTiltCarousel() {
   render();
 }
 
+function weatherLabel(code) {
+  const n = Number(code);
+  if (n === 0) return "晴朗";
+  if (n <= 3) return "多云";
+  if (n === 45 || n === 48) return "有雾";
+  if (n <= 57) return "毛毛雨";
+  if (n <= 67) return "降雨";
+  if (n <= 77) return "降雪";
+  if (n <= 82) return "阵雨";
+  if (n <= 86) return "阵雪";
+  if (n <= 99) return "雷雨";
+  return "多变";
+}
+
+function formatFaroeTime(iso) {
+  try {
+    return new Intl.DateTimeFormat("zh-CN", {
+      timeZone: "Atlantic/Faroe",
+      month: "numeric",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }).format(new Date(iso));
+  } catch {
+    return iso;
+  }
+}
+
+function weekdayLabel(dateStr) {
+  const days = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+  return days[new Date(`${dateStr}T12:00:00`).getDay()];
+}
+
+async function loadHikingWeather(lat, lon, place) {
+  const nowBox = document.getElementById("weatherNow");
+  const weekBox = document.getElementById("weatherWeek");
+  if (!nowBox || !weekBox) return;
+  nowBox.textContent = "正在获取实时天气……";
+  weekBox.innerHTML = "";
+  const params = new URLSearchParams({
+    latitude: String(lat),
+    longitude: String(lon),
+    current: "temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_gusts_10m,precipitation,cloud_cover,relative_humidity_2m",
+    daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max",
+    wind_speed_unit: "ms",
+    timezone: "Atlantic/Faroe",
+    forecast_days: "7",
+  });
+  try {
+    const res = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    if (!res.ok) throw new Error("weather");
+    const data = await res.json();
+    const c = data.current;
+    nowBox.innerHTML = `
+      <div class="weather-main">
+        <p class="weather-place">${place}</p>
+        <p class="weather-temp">${Math.round(c.temperature_2m)}°</p>
+        <p class="weather-desc">${weatherLabel(c.weather_code)}</p>
+      </div>
+      <ul class="weather-meta">
+        <li>体感 ${Math.round(c.apparent_temperature)}°</li>
+        <li>风力 ${Math.round(c.wind_speed_10m)} m/s</li>
+        <li>阵风 ${Math.round(c.wind_gusts_10m)} m/s</li>
+        <li>湿度 ${Math.round(c.relative_humidity_2m)}%</li>
+        <li>云量 ${Math.round(c.cloud_cover)}%</li>
+        <li>降水 ${Number(c.precipitation).toFixed(1)} mm</li>
+      </ul>
+      <p class="weather-updated">更新于法罗时间 ${formatFaroeTime(c.time)}</p>
+    `;
+    weekBox.innerHTML = data.daily.time
+      .map((day, i) => {
+        const today = i === 0 ? "今天" : weekdayLabel(day);
+        return `
+          <article class="forecast-card">
+            <p class="forecast-day">${today}</p>
+            <p class="forecast-desc">${weatherLabel(data.daily.weather_code[i])}</p>
+            <p class="forecast-temp">${Math.round(data.daily.temperature_2m_max[i])}° / ${Math.round(data.daily.temperature_2m_min[i])}°</p>
+            <p>降水概率 ${data.daily.precipitation_probability_max[i] ?? 0}%</p>
+            <p>风力 ${Math.round(data.daily.wind_speed_10m_max[i])} m/s</p>
+          </article>
+        `;
+      })
+      .join("");
+  } catch {
+    nowBox.innerHTML = `
+      <p>暂时无法获取实时天气。请改看官方预报
+        <a class="text-link" href="https://www.vedur.fo" target="_blank" rel="noopener">vedur.fo</a>
+        或
+        <a class="text-link" href="https://www.yr.no" target="_blank" rel="noopener">yr.no</a>。
+      </p>
+    `;
+  }
+}
+
+function initHikingWeather() {
+  const nowBox = document.getElementById("weatherNow");
+  if (!nowBox) return;
+  const buttons = [...document.querySelectorAll("#weatherPlaces [data-place]")];
+  const loadActive = () => {
+    const btn = buttons.find((el) => el.classList.contains("active")) || buttons[0];
+    loadHikingWeather(btn.dataset.lat, btn.dataset.lon, btn.dataset.place);
+  };
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((el) => el.classList.remove("active"));
+      btn.classList.add("active");
+      loadActive();
+    });
+  });
+  loadActive();
+  setInterval(loadActive, 15 * 60 * 1000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
   initParallax();
@@ -417,4 +533,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initActiveNav();
   syncFavUI();
   initTiltCarousel();
+  initHikingWeather();
 });
